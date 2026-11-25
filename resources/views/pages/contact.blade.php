@@ -1,16 +1,17 @@
 ﻿@extends('layouts.app')
-@section('title', 'Contact Peakload')
+@section('title', 'Contact Pointforge')
 @section('content')
 <section class="section">
     <div class="wrap grid-2">
         <div>
             <h2>Contact</h2>
-            <p class="lede">Tell us about your dirt haul, gravel delivery, or spoil removal. We’ll confirm truck size, dump tickets, and a Front Range dispatch window.</p>
+            <p class="lede">Share site address, approximate square footage, and deliverable goals. We will confirm scanner mobilization, processing tier, and a Central Texas field window.</p>
             <div class="panel">
-                <p><strong>Phone:</strong> (303) 555-0172</p>
-                <p><strong>Email:</strong> hello@peakloadhauling.com</p>
-                <p><strong>Service area:</strong> Denver, Aurora, Boulder, Colorado Springs & Front Range</p>
-                <p><strong>WhatsApp:</strong> <a href="https://wa.me/13035550172" target="_blank" rel="noopener">Chat now</a></p>
+                <p><strong>Phone:</strong> (512) 555-0148</p>
+                <p><strong>Email:</strong> hello@pointforgereality.com</p>
+                <p><strong>Operations:</strong> ops@pointforgereality.com</p>
+                <p><strong>Service area:</strong> Austin &amp; Central Texas</p>
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/15125550148" target="_blank" rel="noopener">Chat now</a></p>
             </div>
         </div>
         <div class="panel">

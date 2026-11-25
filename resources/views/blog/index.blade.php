@@ -4,7 +4,7 @@
 <section class="section">
     <div class="wrap">
         <h2>Blog</h2>
-        <p class="lede">Field notes on dump-truck hauling, material delivery, and Front Range jobsite logistics.</p>
+        <p class="lede">Field notes on laser scanning, point cloud registration, and Central Texas jobsite reality capture.</p>
         <div class="grid-3">
             @foreach($posts as $post)
                 <a class="panel" href="{{ route('blog.show', $post->slug) }}">

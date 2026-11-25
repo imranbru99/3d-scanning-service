@@ -4,7 +4,7 @@
 <section class="section">
     <div class="wrap">
         <h2>Knowledge Base</h2>
-        <p class="lede">Common issues, hauling guides, admin manual notes, and troubleshooting for Peakload dump-truck operations.</p>
+        <p class="lede">Common issues, scanning guides, admin manual notes, and troubleshooting for Pointforge reality capture operations.</p>
         @foreach($articles as $category => $items)
             <h3 style="font-family:var(--font-display);text-transform:uppercase;margin:2rem 0 .8rem">{{ str_replace('_',' ', ucfirst($category)) }}</h3>
             <div class="grid-2">

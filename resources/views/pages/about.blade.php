@@ -1,15 +1,15 @@
 ﻿@extends('layouts.app')
-@section('title', 'About Peakload')
+@section('title', 'About Pointforge')
 @section('content')
 <section class="section">
     <div class="wrap grid-2">
         <div>
-            <h2>Built for the haul</h2>
-            <p class="lede">Peakload Hauling Co. is a Denver Front Range SME focused on dump-truck dirt haul-away, aggregate delivery, construction spoil, and demo debris. We grew out of drivers who refused to show up without a clear dump plan — and that discipline still defines every job packet.</p>
-            <p class="lede">Our field teams load, haul, and tip. Our office runs dispatch, inventory, and invoicing in a unified ERP so customers get clear timelines and clean paperwork.</p>
+            <h2>Built for measured reality</h2>
+            <p class="lede">Pointforge Reality Capture is an Austin-area SME focused on terrestrial laser scanning, point cloud registration, and scan-to-CAD deliverables. We grew out of field techs who refused to hand off unregistered clouds — and that standard still defines every project folder.</p>
+            <p class="lede">Our scan teams capture on site. Our office runs quoting, processing tiers, and invoicing in a unified ERP so architects, GCs, and VDC leads get predictable timelines and traceable deliverables.</p>
         </div>
         <div>
-            <img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=1400&q=80" alt="Dump truck on a construction site" style="width:100%;height:360px;object-fit:cover;">
+            <img src="https://images.unsplash.com/photo-1581092162384-8987a1d9d588?auto=format&fit=crop&w=1400&q=80" alt="Laser scanning technician on a jobsite" style="width:100%;height:360px;object-fit:cover;border-radius:.35rem;">
         </div>
     </div>
 </section>

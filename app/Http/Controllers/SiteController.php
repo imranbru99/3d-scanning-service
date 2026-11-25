@@ -57,7 +57,7 @@ class SiteController extends Controller
 
         ContactMessage::query()->create($data);
 
-        return back()->with('success', 'Thanks! Peakload will follow up within one business day.');
+        return back()->with('success', 'Thanks! Pointforge will follow up within one business day with scan scope and mobilization details.');
     }
 
     public function blog(): View
@@ -104,41 +104,41 @@ class SiteController extends Controller
     protected function serviceCatalog(): array
     {
         return [
-            'dirt-fill-hauling' => [
-                'title' => 'Dirt & Fill Hauling',
-                'summary' => 'Export cut material or import engineered fill with weighed dump tickets.',
-                'body' => 'Peakload stages end-dump and tri-axle trucks for cut/fill cycles on Front Range jobsites. We coordinate dump destinations, track tonnage tickets, and keep loaders fed so excavators are never waiting on trucks.',
-                'image' => 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1600&q=80',
+            'building-as-built-laser-scanning' => [
+                'title' => 'Building As-Built Laser Scanning',
+                'summary' => 'Millimeter-grade exterior and shell documentation with registered point clouds and control.',
+                'body' => 'Pointforge captures façades, structural frames, and envelope geometry with terrestrial laser scanners. We establish survey control, run overlapping scan positions, and register clouds for architects and GCs who need trustworthy as-built dimensions across Austin and Central Texas.',
+                'image' => 'https://images.unsplash.com/photo-1486406146926-9300a8dcf259?auto=format&fit=crop&w=1600&q=80',
             ],
-            'aggregate-delivery' => [
-                'title' => 'Aggregate Delivery',
-                'summary' => 'Road base, rock, sand, and recycled concrete delivered to the pad.',
-                'body' => 'Order by the ton or by the load. Peakload sources common Front Range aggregates and drops them where your crew needs them — driveways, pads, trenches, and staging yards included.',
-                'image' => 'https://images.unsplash.com/photo-1590496793929-36417d3117de?auto=format&fit=crop&w=1600&q=80',
+            'interior-mep-reality-capture' => [
+                'title' => 'Interior / MEP Reality Capture',
+                'summary' => 'Dense interior scans for clash-ready MEP, ceilings, and occupied spaces.',
+                'body' => 'We scan mechanical rooms, corridors, and tenant interiors with scan positions planned around access windows and safety requirements. Deliverables include colorized point clouds and extraction-ready datasets for coordination teams.',
+                'image' => 'https://images.unsplash.com/photo-1581094794329-c811d9fab50c?auto=format&fit=crop&w=1600&q=80',
             ],
-            'construction-spoil' => [
-                'title' => 'Construction Spoil Removal',
-                'summary' => 'Keep excavations clear with staged dump-truck cycles off the site.',
-                'body' => 'From foundation digs to utility trenches, we haul spoil to approved facilities. Tell us soil type and access constraints and we will size the truck and dump plan before the first load leaves.',
+            'scan-to-cad-bim-deliverables' => [
+                'title' => 'Scan-to-CAD / Scan-to-BIM Deliverables',
+                'summary' => 'Revit, AutoCAD, and Navisworks-ready models traced from registered scans.',
+                'body' => 'Pointforge converts point clouds into CAD linework or BIM elements with LOD scopes agreed up front. We document what is modeled versus left as cloud reference so your design team knows exactly what they are receiving.',
+                'image' => 'https://images.unsplash.com/photo-1582719478250-c89cae7dc08b?auto=format&fit=crop&w=1600&q=80',
+            ],
+            'site-civil-topographic-scanning' => [
+                'title' => 'Site & Civil Topographic Scanning',
+                'summary' => 'Ground and site topo captured for grading, utilities, and earthwork verification.',
+                'body' => 'Terrestrial and mobile mapping workflows capture pads, utilities, and existing grades without waiting on aerial weather windows. Outputs support civil engineers, landscape architects, and contractors validating cut/fill quantities.',
                 'image' => 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80',
             ],
-            'demo-debris-hauling' => [
-                'title' => 'Demo Debris Hauling',
-                'summary' => 'Move demolition debris and mixed construction waste with the right dump ticket.',
-                'body' => 'Peakload hauls demo loads that fit dump-truck specs — concrete chunks, asphalt millings, and mixed C&D when the receiving facility allows. We confirm dump fees and material rules up front so there are no surprises at the gate.',
-                'image' => 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80',
+            'clash-verification-field-scans' => [
+                'title' => 'Clash Verification Field Scans',
+                'summary' => 'Targeted field captures to prove install clearance before panels ship.',
+                'body' => 'When the model and field disagree, we mobilize for focused scan zones — chases, racks, and penetrations — and deliver comparison-ready clouds for VDC teams. Ideal for late-stage MEP and prefab verification.',
+                'image' => 'https://images.unsplash.com/photo-1541888946425-0e4a29a4a36a?auto=format&fit=crop&w=1600&q=80',
             ],
-            'site-material-transport' => [
-                'title' => 'Site Material Transport',
-                'summary' => 'Shuttle rock, dirt, and stockpile material between pads and yards.',
-                'body' => 'Need material moved from stockpile A to pad B without leaving the project? We run short-haul cycles with trucks sized for site roads and turnarounds.',
-                'image' => 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=1600&q=80',
-            ],
-            'same-day-dispatch' => [
-                'title' => 'Same-Day Truck Dispatch',
-                'summary' => 'When a loader is waiting, Peakload can often put a truck on the road today.',
-                'body' => 'Call early with address, material, and dump preference. Subject to fleet availability across Denver, Aurora, Boulder, and Colorado Springs corridors.',
-                'image' => 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=1600&q=80',
+            'progress-sequence-reality-capture' => [
+                'title' => 'Progress / Sequence Reality Capture',
+                'summary' => 'Repeatable scan milestones for schedule accountability and owner reporting.',
+                'body' => 'We return on agreed cadence — monthly, per floor, or per phase — with consistent control so change detection and progression visuals stay comparable. Great for healthcare, education, and mission-critical builds.',
+                'image' => 'https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=1600&q=80',
             ],
         ];
     }

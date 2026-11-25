@@ -11,36 +11,36 @@ class AiService
     /** @var array<int, array{q: string, a: string}> */
     protected array $faq = [
         [
-            'q' => 'cost price estimate ton load haul dirt',
-            'a' => 'Front Range dump-truck hauling is usually quoted per load or per ton plus dump fees. Distance to dump, truck size, wait time, and material type all matter. Call (303) 555-0172 with the address and material for a same-day estimate.',
+            'q' => 'cost price estimate scan day rate point cloud',
+            'a' => 'Central Texas laser scanning is usually quoted per scan day, processing tier, and deliverable format. Building size, interior complexity, and BIM LOD drive the number. Call (512) 555-0148 or email hello@pointforgereality.com with address and scope for a same-day estimate.',
         ],
         [
-            'q' => 'truck size tri axle end dump capacity',
-            'a' => 'Peakload runs end dumps and tri-axles sized for dirt, rock, and spoil. Typical loads depend on material density and legal weight — we match the truck to site access and the receiving facility.',
+            'q' => 'accuracy tolerance millimeter lidar terrestrial',
+            'a' => 'Pointforge registers scans to project control. Typical terrestrial workflows achieve survey-grade registration when control is solid; we document expected tolerance bands in the statement of work so VDC teams can plan accordingly.',
         ],
         [
-            'q' => 'services dirt gravel aggregate spoil demo delivery',
-            'a' => 'Peakload offers dirt & fill hauling, aggregate delivery, construction spoil removal, demo debris hauling, on-site material transport, and same-day dispatch across Denver and the Front Range.',
+            'q' => 'services as-built bim cad topo interior mep',
+            'a' => 'Pointforge offers building as-built laser scanning, interior/MEP reality capture, scan-to-CAD/BIM, site & civil topo scanning, clash verification field scans, and progress/sequence capture across Austin and Central Texas.',
         ],
         [
-            'q' => 'dump ticket landfill facility fee',
-            'a' => 'We confirm dump destinations and gate fees before the first load. Clean dirt, rock, concrete, and mixed C&D may go to different facilities — tell us the material so tickets stay clean.',
+            'q' => 'deliverable format e57 rcp las revit autocad',
+            'a' => 'Common deliverables include registered point clouds (.e57, .rcp, .las), TruView or web viewers, and modeled CAD/BIM per scope. Tell us your downstream toolchain so we export the right formats and coordinates.',
         ],
         [
-            'q' => 'schedule appointment dispatch contact same day',
-            'a' => 'Call or text (303) 555-0172, use the contact form, or WhatsApp us. Denver metro and Front Range dispatches are often available within 1–2 business days; same-day when the fleet has open slots.',
+            'q' => 'schedule appointment mobilization contact same day',
+            'a' => 'Call, WhatsApp +1 512-555-0148, or use the contact form. Austin metro mobilization is often available within a few business days; rush interior scans depend on access and scanner availability.',
         ],
         [
-            'q' => 'wait time standby demurrage loader',
-            'a' => 'Quoted rates assume reasonable load/unload cycles. Extended standby waiting on a loader or gate can add hourly charges — we flag that on the ticket and the invoice.',
+            'q' => 'bim lod level detail modeling scope',
+            'a' => 'Scan-to-BIM LOD is defined before modeling starts — what gets traced as walls, ducts, or pipe versus left as cloud reference. Pointforge scopes LOD so invoices match what coordination teams actually need.',
         ],
         [
-            'q' => 'service area denver aurora boulder colorado springs',
-            'a' => 'Peakload covers Denver, Aurora, Boulder, Colorado Springs, and surrounding Front Range corridors. Ask about staging for multi-day excavation cycles.',
+            'q' => 'service area austin round rock central texas',
+            'a' => 'Pointforge covers Austin, Round Rock, Cedar Park, San Marcos, Georgetown, and wider Central Texas corridors. Ask about multi-day hotel corridors and phased campus work.',
         ],
         [
-            'q' => 'aggregate gravel road base sand delivery',
-            'a' => 'We deliver common Front Range aggregates — road base, gravel, sand, and recycled concrete — by the ton or load. Share product and drop location for timing.',
+            'q' => 'occupancy access safety interior scan',
+            'a' => 'Occupied buildings need escorts, lockout windows, and sometimes night shifts. Share HVAC shutdown needs and PPE rules when you book so scan positions stay efficient and safe.',
         ],
     ];
 
@@ -85,10 +85,10 @@ class AiService
     public function generate(string $type, string $prompt): string
     {
         $message = match ($type) {
-            'blog' => "Write a concise SEO blog post outline and intro for a dump truck hauling company about: {$prompt}",
-            'description' => "Write a compelling product/service description for dump truck hauling: {$prompt}",
-            'automation' => "Suggest 5 practical AI automations for a hauling SME ERP related to: {$prompt}",
-            'troubleshoot' => "Troubleshoot this dump truck hauling operations issue with clear steps: {$prompt}",
+            'blog' => "Write a concise SEO blog post outline and intro for a 3D laser scanning / reality capture company about: {$prompt}",
+            'description' => "Write a compelling product/service description for 3D laser scanning: {$prompt}",
+            'automation' => "Suggest 5 practical AI automations for a reality capture SME ERP related to: {$prompt}",
+            'troubleshoot' => "Troubleshoot this 3D scanning operations issue with clear steps: {$prompt}",
             default => $prompt,
         };
 
@@ -120,7 +120,7 @@ class AiService
             return $best;
         }
 
-        return 'Thanks for reaching Peakload Hauling Co. We haul dirt, rock, spoil, and demo debris across Denver and the Front Range. Ask about truck sizes, tonnage pricing, dump tickets, aggregate delivery, or scheduling—or call (303) 555-0172 to book a haul.';
+        return 'Thanks for reaching Pointforge Reality Capture. We deliver LiDAR as-built scans, point clouds, and scan-to-CAD/BIM across Austin and Central Texas. Ask about scan-day pricing, deliverable formats, accuracy, interior access, or scheduling—or call (512) 555-0148.';
     }
 
     protected function callOpenAi(string $message, string $key): string
@@ -132,7 +132,7 @@ class AiService
                 'messages' => [
                     [
                         'role' => 'system',
-                        'content' => 'You are the Peakload Hauling Co. assistant for a Denver / Colorado Front Range dump truck hauling company. Be concise, practical, and focused on dirt haul-away, aggregate delivery, construction spoil, demo debris, truck dispatch, and dump tickets. Never invent illegal claims.',
+                        'content' => 'You are the Pointforge Reality Capture assistant for a Central Texas 3D laser scanning and reality capture company. Be concise, practical, and focused on as-built scans, point clouds, scan-to-CAD/BIM, topo, clash verification, and mobilization. Never invent legal or survey licensure claims.',
                     ],
                     ['role' => 'user', 'content' => $message],
                 ],
@@ -152,7 +152,7 @@ class AiService
                 'contents' => [
                     [
                         'parts' => [
-                            ['text' => "You are Peakload Hauling Co. assistant (Denver dump truck hauling). Answer briefly:\n{$message}"],
+                            ['text' => "You are Pointforge Reality Capture assistant (Austin 3D laser scanning). Answer briefly:\n{$message}"],
                         ],
                     ],
                 ],

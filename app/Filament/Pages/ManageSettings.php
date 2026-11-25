@@ -29,11 +29,11 @@ class ManageSettings extends Page implements HasForms
     public function mount(): void
     {
         $this->form->fill([
-            'company_name' => Setting::getValue('company_name', 'Peakload Hauling Co.'),
-            'company_phone' => Setting::getValue('company_phone', '(303) 555-0172'),
-            'company_email' => Setting::getValue('company_email', 'hello@peakloadhauling.com'),
-            'whatsapp' => Setting::getValue('whatsapp', '13035550172'),
-            'service_area' => Setting::getValue('service_area', 'Denver, Aurora, Boulder, Colorado Springs & Front Range'),
+            'company_name' => Setting::getValue('company_name', 'Pointforge Reality Capture'),
+            'company_phone' => Setting::getValue('company_phone', '(512) 555-0148'),
+            'company_email' => Setting::getValue('company_email', 'hello@pointforgereality.com'),
+            'whatsapp' => Setting::getValue('whatsapp', '15125550148'),
+            'service_area' => Setting::getValue('service_area', 'Austin, Round Rock, San Marcos, Georgetown & Central Texas'),
             'tax_rate' => Setting::getValue('tax_rate', '7.50'),
         ]);
     }

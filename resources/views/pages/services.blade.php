@@ -1,18 +1,18 @@
 ﻿@extends('layouts.app')
-@section('title', 'Dump Truck Hauling Services')
+@section('title', '3D Laser Scanning Services')
 @section('content')
 <section class="section">
     <div class="wrap">
         <h2>Services</h2>
-        <p class="lede">Peakload moves dirt, rock, spoil, and demo debris across Denver, Aurora, Boulder, Colorado Springs, and the Front Range.</p>
+        <p class="lede">Pointforge delivers as-built scans, interior reality capture, scan-to-BIM, topo, clash verification, and progress documentation across Austin and Central Texas.</p>
         <div class="grid-3">
             @foreach([
-                ['dirt-fill-hauling','Dirt & Fill Hauling','https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=80'],
-                ['aggregate-delivery','Aggregate Delivery','https://images.unsplash.com/photo-1590496793929-36417d3117de?auto=format&fit=crop&w=1200&q=80'],
-                ['construction-spoil','Construction Spoil Removal','https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80'],
-                ['demo-debris-hauling','Demo Debris Hauling','https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80'],
-                ['site-material-transport','Site Material Transport','https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=1200&q=80'],
-                ['same-day-dispatch','Same-Day Truck Dispatch','https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=1200&q=80'],
+                ['building-as-built-laser-scanning','Building As-Built Laser Scanning','https://images.unsplash.com/photo-1486406146926-9300a8dcf259?auto=format&fit=crop&w=1200&q=80'],
+                ['interior-mep-reality-capture','Interior / MEP Reality Capture','https://images.unsplash.com/photo-1581094794329-c811d9fab50c?auto=format&fit=crop&w=1200&q=80'],
+                ['scan-to-cad-bim-deliverables','Scan-to-CAD / Scan-to-BIM','https://images.unsplash.com/photo-1582719478250-c89cae7dc08b?auto=format&fit=crop&w=1200&q=80'],
+                ['site-civil-topographic-scanning','Site & Civil Topographic Scanning','https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80'],
+                ['clash-verification-field-scans','Clash Verification Field Scans','https://images.unsplash.com/photo-1541888946425-0e4a29a4a36a?auto=format&fit=crop&w=1200&q=80'],
+                ['progress-sequence-reality-capture','Progress / Sequence Reality Capture','https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=1200&q=80'],
             ] as [$slug,$title,$img])
                 <a class="service-tile" href="{{ route('services.show', $slug) }}">
                     <img src="{{ $img }}" alt="{{ $title }}">

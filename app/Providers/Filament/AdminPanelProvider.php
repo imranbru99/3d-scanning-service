@@ -26,9 +26,9 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
-            ->brandName('Peakload Hauling')
+            ->brandName('Pointforge Reality Capture')
             ->colors([
-                'primary' => Color::hex('#e8a317'),
+                'primary' => Color::hex('#1aa6b7'),
                 'gray' => Color::Slate,
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')

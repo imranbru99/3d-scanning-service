@@ -15,7 +15,7 @@ class ProductResource extends Resource
     protected static ?string $model = Product::class;
     protected static ?string $navigationIcon = 'heroicon-o-cube';
     protected static ?string $navigationGroup = 'Inventory';
-    protected static ?string $navigationLabel = 'Products / Materials';
+    protected static ?string $navigationLabel = 'Products / Packages';
 
     public static function form(Form $form): Form
     {
@@ -23,12 +23,12 @@ class ProductResource extends Resource
             Forms\Components\TextInput::make('name')->required(),
             Forms\Components\TextInput::make('sku')->required()->unique(ignoreRecord: true),
             Forms\Components\Select::make('category')->options([
-                'haul' => 'Haul Services',
-                'aggregate' => 'Aggregate / Materials',
-                'dump' => 'Dump Fees',
+                'field' => 'Field / Scan Days',
+                'equipment' => 'Equipment Rental',
+                'processing' => 'Point Cloud Processing',
+                'deliverable' => 'Deliverables',
+                'hosting' => 'Hosting / Viewers',
                 'surcharge' => 'Surcharges',
-                'fuel' => 'Fuel',
-                'tool' => 'Tools & Equipment',
             ]),
             Forms\Components\TextInput::make('unit')->default('kit'),
             Forms\Components\TextInput::make('unit_cost')->numeric()->prefix('$'),

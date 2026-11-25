@@ -24,7 +24,7 @@ class JobsChart extends ChartWidget
                 [
                     'label' => 'Jobs',
                     'data' => $rows->values()->all(),
-                    'backgroundColor' => ['#e07a3a', '#2a9d8f', '#3b82f6', '#22c55e', '#64748b', '#ef4444'],
+                    'backgroundColor' => ['#1aa6b7', '#3d5a6c', '#148a98', '#22c55e', '#64748b', '#ef4444'],
                 ],
             ],
             'labels' => $rows->keys()->map(fn ($s) => str_replace('_', ' ', ucfirst($s)))->all(),

@@ -31,52 +31,52 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Admin',
                 'password' => Hash::make('password'),
                 'role' => 'admin',
-                'phone' => '(303) 555-0100',
+                'phone' => '(512) 555-0100',
             ]
         );
         $admin->syncRoles(['admin']);
 
         User::query()->updateOrCreate(
-            ['email' => 'manager@peakloadhauling.com'],
+            ['email' => 'manager@pointforgereality.com'],
             [
-                'name' => 'Sam Rivera',
+                'name' => 'Elena Marsh',
                 'password' => Hash::make('password'),
                 'role' => 'manager',
-                'phone' => '(303) 555-0101',
+                'phone' => '(512) 555-0101',
             ]
         )->syncRoles(['manager']);
 
         User::query()->updateOrCreate(
-            ['email' => 'dispatch@peakloadhauling.com'],
+            ['email' => 'ops@pointforgereality.com'],
             [
-                'name' => 'Nate Brooks',
+                'name' => 'Jon Vega',
                 'password' => Hash::make('password'),
                 'role' => 'staff',
-                'phone' => '(303) 555-0102',
+                'phone' => '(512) 555-0102',
             ]
         )->syncRoles(['staff']);
 
         $settings = [
-            'company_name' => 'Peakload Hauling Co.',
-            'company_phone' => '(303) 555-0172',
-            'company_email' => 'hello@peakloadhauling.com',
-            'whatsapp' => '13035550172',
-            'service_area' => 'Denver, Aurora, Boulder, Colorado Springs & Front Range',
-            'tax_rate' => '8.31',
+            'company_name' => 'Pointforge Reality Capture',
+            'company_phone' => '(512) 555-0148',
+            'company_email' => 'hello@pointforgereality.com',
+            'whatsapp' => '15125550148',
+            'service_area' => 'Austin, Round Rock, San Marcos, Georgetown & Central Texas',
+            'tax_rate' => '8.25',
         ];
         foreach ($settings as $key => $value) {
             Setting::setValue($key, $value);
         }
 
         $products = [
-            ['name' => 'Tri-Axle Dirt Haul (load)', 'sku' => 'HAUL-DIRT-L', 'category' => 'haul', 'unit_cost' => 95, 'unit_price' => 185, 'stock_qty' => 40, 'unit' => 'load'],
-            ['name' => 'End-Dump Spoil Haul (ton)', 'sku' => 'HAUL-SPL-T', 'category' => 'haul', 'unit_cost' => 12, 'unit_price' => 28, 'stock_qty' => 500, 'unit' => 'ton'],
-            ['name' => 'Class 6 Road Base (ton)', 'sku' => 'AGG-C6-T', 'category' => 'aggregate', 'unit_cost' => 18, 'unit_price' => 36, 'stock_qty' => 420, 'unit' => 'ton'],
-            ['name' => '3/4" Clean Rock (ton)', 'sku' => 'AGG-34-T', 'category' => 'aggregate', 'unit_cost' => 22, 'unit_price' => 42, 'stock_qty' => 310, 'unit' => 'ton'],
-            ['name' => 'Concrete Dump Fee Pass-Through', 'sku' => 'DUMP-CON-T', 'category' => 'dump', 'unit_cost' => 8, 'unit_price' => 12, 'stock_qty' => 999, 'unit' => 'ton'],
-            ['name' => 'Clean Dirt Dump Fee', 'sku' => 'DUMP-DIRT-L', 'category' => 'dump', 'unit_cost' => 25, 'unit_price' => 45, 'stock_qty' => 999, 'unit' => 'load'],
-            ['name' => 'Standby / Wait Time (hour)', 'sku' => 'WAIT-HR', 'category' => 'surcharge', 'unit_cost' => 40, 'unit_price' => 95, 'stock_qty' => 80, 'unit' => 'hour'],
-            ['name' => 'Fuel Surcharge (load)', 'sku' => 'FUEL-SUR-L', 'category' => 'surcharge', 'unit_cost' => 8, 'unit_price' => 18, 'stock_qty' => 200, 'unit' => 'load'],
+            ['name' => 'Terrestrial Laser Scan Day Rate', 'sku' => 'SCAN-DAY-TLS', 'category' => 'field', 'unit_cost' => 620, 'unit_price' => 1450, 'stock_qty' => 60, 'unit' => 'day'],
+            ['name' => 'Mobile Mapping Day Rate', 'sku' => 'SCAN-DAY-MOB', 'category' => 'field', 'unit_cost' => 780, 'unit_price' => 1750, 'stock_qty' => 24, 'unit' => 'day'],
+            ['name' => 'Scan Target & Control Kit (rental)', 'sku' => 'KIT-TGT-01', 'category' => 'equipment', 'unit_cost' => 45, 'unit_price' => 120, 'stock_qty' => 40, 'unit' => 'day'],
+            ['name' => 'Point Cloud Registration Package', 'sku' => 'PROC-REG-M', 'category' => 'processing', 'unit_cost' => 180, 'unit_price' => 420, 'stock_qty' => 200, 'unit' => 'project'],
+            ['name' => 'Scan-to-CAD Deliverable (Revit LOD 200)', 'sku' => 'DEL-CAD-R200', 'category' => 'deliverable', 'unit_cost' => 350, 'unit_price' => 890, 'stock_qty' => 80, 'unit' => 'level'],
+            ['name' => 'Registered Point Cloud Export (.e57/.rcp)', 'sku' => 'DEL-PC-EXP', 'category' => 'deliverable', 'unit_cost' => 90, 'unit_price' => 245, 'stock_qty' => 500, 'unit' => 'export'],
+            ['name' => 'TruView / Web Viewer Hosting (month)', 'sku' => 'HOST-TV-M', 'category' => 'hosting', 'unit_cost' => 25, 'unit_price' => 75, 'stock_qty' => 999, 'unit' => 'month'],
+            ['name' => 'Night / Weekend Mobilization Surcharge', 'sku' => 'SUR-OFF-HR', 'category' => 'surcharge', 'unit_cost' => 85, 'unit_price' => 195, 'stock_qty' => 100, 'unit' => 'hour'],
         ];
         foreach ($products as $product) {
             Product::query()->updateOrCreate(
@@ -86,19 +86,19 @@ class DatabaseSeeder extends Seeder
         }
 
         $customers = collect([
-            ['name' => 'Allison Kent', 'email' => 'allison@example.com', 'phone' => '(303) 555-2201', 'company' => null, 'city' => 'Denver', 'state' => 'CO', 'zip' => '80205', 'address' => '812 Larimer St'],
-            ['name' => 'Derek Cho', 'email' => 'derek@frontedgesite.com', 'phone' => '(720) 555-2210', 'company' => 'Front Edge Siteworks', 'city' => 'Aurora', 'state' => 'CO', 'zip' => '80012', 'address' => '4500 Peoria St'],
-            ['name' => 'Priya Shah', 'email' => 'ops@rockymtnbuild.com', 'phone' => '(303) 555-2299', 'company' => 'Rocky Mtn Builders', 'city' => 'Boulder', 'state' => 'CO', 'zip' => '80301', 'address' => '2100 Pearl Pkwy'],
-            ['name' => 'Marcus Lee', 'email' => 'marcus.lee@example.com', 'phone' => '(719) 555-2188', 'company' => null, 'city' => 'Colorado Springs', 'state' => 'CO', 'zip' => '80903', 'address' => '119 Cascade Ave'],
-            ['name' => 'Helen Ortiz', 'email' => 'helen@plainsviewhoa.org', 'phone' => '(303) 555-2177', 'company' => 'Plainsview HOA', 'city' => 'Lakewood', 'state' => 'CO', 'zip' => '80226', 'address' => '88 Wadsworth Blvd'],
+            ['name' => 'Riley Harmon', 'email' => 'riley@example.com', 'phone' => '(512) 555-2201', 'company' => null, 'city' => 'Austin', 'state' => 'TX', 'zip' => '78701', 'address' => '301 Congress Ave'],
+            ['name' => 'Maya Collins', 'email' => 'maya@hillcountryvdc.com', 'phone' => '(512) 555-2210', 'company' => 'Hill Country VDC', 'city' => 'Round Rock', 'state' => 'TX', 'zip' => '78664', 'address' => '1200 Louis Henna Blvd'],
+            ['name' => 'Dev Patel', 'email' => 'dev@texashealthbuild.com', 'phone' => '(512) 555-2299', 'company' => 'Texas Health Build', 'city' => 'San Marcos', 'state' => 'TX', 'zip' => '78666', 'address' => '450 River Rd'],
+            ['name' => 'Carmen Alves', 'email' => 'carmen.alves@example.com', 'phone' => '(512) 555-2188', 'company' => null, 'city' => 'Georgetown', 'state' => 'TX', 'zip' => '78626', 'address' => '812 S Main St'],
+            ['name' => 'Noah Whitfield', 'email' => 'noah@cedarparkarch.com', 'phone' => '(512) 555-2177', 'company' => 'Cedar Park Architecture Group', 'city' => 'Cedar Park', 'state' => 'TX', 'zip' => '78613', 'address' => '900 Brushy Creek Rd'],
         ])->map(fn ($c) => Customer::query()->updateOrCreate(['email' => $c['email']], $c));
 
         $projects = [
-            ['customer' => 0, 'title' => 'Basement dig dirt export', 'service_type' => 'dirt_fill', 'status' => 'scheduled', 'sq_ft' => 48, 'quoted_amount' => 4200],
-            ['customer' => 1, 'title' => 'Pad road-base delivery', 'service_type' => 'aggregate', 'status' => 'in_progress', 'sq_ft' => 220, 'quoted_amount' => 7800],
-            ['customer' => 2, 'title' => 'Utility trench spoil haul', 'service_type' => 'spoil', 'status' => 'quoted', 'sq_ft' => 90, 'quoted_amount' => 5400],
-            ['customer' => 3, 'title' => 'Garage demo debris haul', 'service_type' => 'demo', 'status' => 'completed', 'sq_ft' => 18, 'quoted_amount' => 2100, 'final_amount' => 2350],
-            ['customer' => 4, 'title' => 'HOA playground rock delivery', 'service_type' => 'aggregate', 'status' => 'invoiced', 'sq_ft' => 36, 'quoted_amount' => 3200, 'final_amount' => 3150],
+            ['customer' => 0, 'title' => 'Downtown tower shell as-built', 'service_type' => 'as_built', 'status' => 'scheduled', 'sq_ft' => 185000, 'quoted_amount' => 28500],
+            ['customer' => 1, 'title' => 'MEP mezzanine reality capture', 'service_type' => 'interior_mep', 'status' => 'in_progress', 'sq_ft' => 42000, 'quoted_amount' => 12400],
+            ['customer' => 2, 'title' => 'Hospital wing scan-to-BIM LOD 200', 'service_type' => 'scan_cad', 'status' => 'quoted', 'sq_ft' => 95000, 'quoted_amount' => 38200],
+            ['customer' => 3, 'title' => 'Campus civil topo + utilities', 'service_type' => 'topo', 'status' => 'completed', 'sq_ft' => 12, 'quoted_amount' => 6800, 'final_amount' => 7100],
+            ['customer' => 4, 'title' => 'Clash verification — Level 3 chases', 'service_type' => 'clash', 'status' => 'invoiced', 'sq_ft' => 8500, 'quoted_amount' => 4200, 'final_amount' => 4200],
         ];
 
         $projectModels = [];
@@ -116,7 +116,7 @@ class DatabaseSeeder extends Seeder
                     'final_amount' => $p['final_amount'] ?? null,
                     'start_date' => now()->subDays(10 - $i)->toDateString(),
                     'site_address' => trim(($customer->address ?? '').', '.$customer->city.', '.$customer->state),
-                    'notes' => 'Seeded demo job for Peakload ERP. sq_ft field stores tons/loads for haul tickets.',
+                    'notes' => 'Seeded demo scan job for Pointforge ERP. sq_ft stores approximate GSF or acreage per job type.',
                 ]
             );
         }
@@ -131,9 +131,9 @@ class DatabaseSeeder extends Seeder
                     'issue_date' => now()->subDays(8 - $idx)->toDateString(),
                     'due_date' => now()->addDays(14)->toDateString(),
                     'subtotal' => $project->final_amount ?? $project->quoted_amount,
-                    'tax' => round(($project->final_amount ?? $project->quoted_amount) * 0.0831, 2),
-                    'total' => round(($project->final_amount ?? $project->quoted_amount) * 1.0831, 2),
-                    'amount_paid' => in_array($project->status, ['completed', 'invoiced'], true) ? round(($project->final_amount ?? $project->quoted_amount) * 1.0831, 2) : 0,
+                    'tax' => round(($project->final_amount ?? $project->quoted_amount) * 0.0825, 2),
+                    'total' => round(($project->final_amount ?? $project->quoted_amount) * 1.0825, 2),
+                    'amount_paid' => in_array($project->status, ['completed', 'invoiced'], true) ? round(($project->final_amount ?? $project->quoted_amount) * 1.0825, 2) : 0,
                     'status' => in_array($project->status, ['completed', 'invoiced'], true) ? 'paid' : 'sent',
                 ]
             );
@@ -145,7 +145,7 @@ class DatabaseSeeder extends Seeder
                         'invoice_id' => $invoice->id,
                         'amount' => $invoice->total,
                         'paid_at' => now()->subDays(3)->toDateString(),
-                        'method' => 'card',
+                        'method' => 'ach',
                         'notes' => 'Demo payment',
                     ]
                 );
@@ -153,25 +153,25 @@ class DatabaseSeeder extends Seeder
         }
 
         Appointment::query()->updateOrCreate(
-            ['title' => 'Basement dig haul — Kent'],
+            ['title' => 'Tower shell — control & first positions'],
             [
                 'customer_id' => $customers[0]->id,
                 'project_id' => $projectModels[0]->id,
                 'type' => 'measure',
-                'starts_at' => now()->addDays(2)->setTime(7, 0),
-                'ends_at' => now()->addDays(2)->setTime(8, 0),
+                'starts_at' => now()->addDays(2)->setTime(7, 30),
+                'ends_at' => now()->addDays(2)->setTime(16, 0),
                 'status' => 'scheduled',
                 'location' => $customers[0]->address,
             ]
         );
         Appointment::query()->updateOrCreate(
-            ['title' => 'Road-base delivery day 1'],
+            ['title' => 'MEP mezzanine scan day 1'],
             [
                 'customer_id' => $customers[1]->id,
                 'project_id' => $projectModels[1]->id,
                 'type' => 'install',
-                'starts_at' => now()->addDays(5)->setTime(6, 30),
-                'ends_at' => now()->addDays(5)->setTime(15, 30),
+                'starts_at' => now()->addDays(5)->setTime(18, 0),
+                'ends_at' => now()->addDays(5)->setTime(23, 0),
                 'status' => 'confirmed',
                 'location' => $customers[1]->address,
             ]
@@ -179,22 +179,22 @@ class DatabaseSeeder extends Seeder
 
         $posts = [
             [
-                'title' => 'How Dump Tickets Keep Dirt Haul Budgets Honest',
-                'excerpt' => 'Weighed tickets beat guessed loads — here is how Peakload documents every haul for GCs.',
-                'cover' => 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1400&q=80',
-                'body' => "Dirt looks the same in a bed until you hit the scale. Peakload logs dump tickets against each job so Front Range GCs can reconcile tonnage against the estimate.\n\nAsk for ticket copies with your weekly invoice packet. If a load waits at the gate, the standby note lands on the same ticket trail.",
+                'title' => 'Why Control Targets Matter Before the First Scan Position',
+                'excerpt' => 'Registration drift shows up in CAD weeks later — here is how Pointforge locks control early.',
+                'cover' => 'https://images.unsplash.com/photo-1581092162384-8987a1d9d588?auto=format&fit=crop&w=1400&q=80',
+                'body' => "Unregistered clouds look fine in a viewer until someone snaps a dimension in Revit. Pointforge places control and checker targets before interior or façade work so every scan position shares a defensible coordinate frame.\n\nShare your survey control or request ours before mobilization. It saves a full day of rework on large Austin commercial shells.",
             ],
             [
-                'title' => 'End Dump vs Tri-Axle: Matching Truck to Site Access',
-                'excerpt' => 'Tight pads and soft site roads change which truck finishes the cycle fastest.',
-                'cover' => 'https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=1400&q=80',
-                'body' => "Tri-axles move more rock per trip when roads allow. End dumps shine when you need a controlled tip or tighter approach. Peakload sizes the truck after we hear about gate width, overhead lines, and dump preference — not from a one-line text.",
+                'title' => 'Choosing Point Cloud vs Scan-to-BIM Deliverables',
+                'excerpt' => 'Not every coordination meeting needs modeled duct — scope the tier that matches the decision.',
+                'cover' => 'https://images.unsplash.com/photo-1582719478250-c89cae7dc08b?auto=format&fit=crop&w=1400&q=80',
+                'body' => "Point clouds excel at verification and visuals. BIM modeling pays off when trades need clash-ready geometry. Pointforge quotes cloud registration, TruView hosting, and LOD-specific modeling as separate SKUs so invoices match what VDC actually uses.",
             ],
             [
-                'title' => 'Ordering Road Base Before the Pad Crew Arrives',
-                'excerpt' => 'Material delivery timing is as important as the tonnage itself.',
-                'cover' => 'https://images.unsplash.com/photo-1590496793929-36417d3117de?auto=format&fit=crop&w=1400&q=80',
-                'body' => "Dropping Class 6 before the grader is ready creates double handling. Peakload stages aggregate deliveries to the pad schedule so loaders stay productive and stockpiles stay clean. Share your pour or grade window when you book.",
+                'title' => 'Interior MEP Scans in Occupied Buildings',
+                'excerpt' => 'Night shifts, escorts, and HVAC rules change scan efficiency more than equipment choice.',
+                'cover' => 'https://images.unsplash.com/photo-1581094794329-c811d9fab50c?auto=format&fit=crop&w=1400&q=80',
+                'body' => "Healthcare and education retrofits rarely offer empty rooms. Pointforge plans scan paths around patient flows, lockout windows, and ceiling access. Tell us about shutdown requirements when you book so field time stays productive.",
             ],
         ];
         foreach ($posts as $post) {
@@ -212,13 +212,13 @@ class DatabaseSeeder extends Seeder
         }
 
         $articles = [
-            ['category' => 'issues', 'title' => 'Loader waiting on trucks', 'body' => "1. Confirm truck ETA and dump cycle time.\n2. Add a second truck if haul distance exceeds 20 minutes one-way.\n3. Log standby if the delay was gate or dump related.\n4. Update the job notes so the invoice reflects actual loads."],
-            ['category' => 'issues', 'title' => 'Wrong dump facility for material', 'body' => "Verify soil/debris type before dispatch. Clean dirt, concrete, asphalt millings, and mixed C&D often require different facilities. Peakload confirms dump rules when the job is booked."],
-            ['category' => 'guides', 'title' => 'Dirt haul day timeline', 'body' => "Day 0: Confirm access, dump ticket, and truck size.\nMorning: First truck on site at loader ready time.\nMidday: Rotate cycles; watch wait time.\nAfternoon: Final ticket photos and yard return.\nCloseout: Loads reconciled to invoice."],
-            ['category' => 'guides', 'title' => 'How to prep a site for dump trucks', 'body' => "Clear overhead hazards, mark soft ground, keep a turnaround, and stage the loader. Share gate codes and dump preference the night before dispatch."],
-            ['category' => 'admin', 'title' => 'Admin ERP quick start', 'body' => "Login at /admin with admin@example.com / password.\n1. Add customers in CRM.\n2. Create a Job/Project with tons/loads and quote.\n3. Schedule appointments for site checks and haul days.\n4. Convert completed jobs to invoices and record payments.\n5. Use AI Studio for blog drafts and troubleshooting suggestions.\n6. Update company Settings for phone, WhatsApp, and tax rate."],
-            ['category' => 'admin', 'title' => 'Roles: Admin, Manager, Staff', 'body' => "Admin: full ERP + settings + users.\nManager: jobs, inventory, invoices, scheduling.\nStaff: field-facing records and appointment updates.\nAssign roles on the Users resource."],
-            ['category' => 'troubleshoot', 'title' => 'Job running over tonnage estimate', 'body' => "Check actual loads vs quote. Confirm extra spoil from soft dig or wet dirt. Log additional tons on the job notes, create a change-order invoice line, and update inventory stock quantities."],
+            ['category' => 'issues', 'title' => 'Misaligned point cloud in Revit', 'body' => "1. Confirm project units and shared coordinates.\n2. Re-link the .rcp from the latest registration folder.\n3. Verify control report against site targets.\n4. Contact Pointforge with job number if a re-export is needed."],
+            ['category' => 'issues', 'title' => 'Scan positions blocked by occupancy', 'body' => "Reschedule for night/weekend windows or split into phased zones. Update the appointment in ERP and log surcharge SKUs if after-hours mobilization applies."],
+            ['category' => 'guides', 'title' => 'Scan day field timeline', 'body' => "Day 0: Control layout and access walk.\nMorning: Perimeter / shell positions.\nMidday: Interior or mezzanine passes.\nAfternoon: Color imagery and target checks.\nCloseout: Field notes uploaded to project folder."],
+            ['category' => 'guides', 'title' => 'How to prep a site for laser scanning', 'body' => "Clear trip hazards in scan paths, provide escorts for restricted areas, mark areas that cannot be captured, and share BIM or PDF plans for scan planning."],
+            ['category' => 'admin', 'title' => 'Admin ERP quick start', 'body' => "Login at /admin with admin@example.com / password.\n1. Add customers in CRM.\n2. Create a scan job with GSF and quoted scan days.\n3. Schedule field appointments.\n4. Convert completed jobs to invoices and record payments.\n5. Use AI Studio for blog drafts and troubleshooting suggestions.\n6. Update company Settings for phone, WhatsApp, and tax rate."],
+            ['category' => 'admin', 'title' => 'Roles: Admin, Manager, Staff', 'body' => "Admin: full ERP + settings + users.\nManager: jobs, products, invoices, scheduling.\nStaff: field appointments and job notes.\nAssign roles on the Users resource."],
+            ['category' => 'troubleshoot', 'title' => 'Job running over quoted scan days', 'body' => "Review field notes for access delays or added zones. Log extra scan-day line items, update sq_ft notes, and issue a change-order invoice before final deliverable export."],
             ['category' => 'troubleshoot', 'title' => 'Chatbot giving demo answers only', 'body' => "Demo mode is expected without API keys. Add OPENAI_API_KEY or GEMINI_API_KEY to .env, then clear config cache. The public chatbot and AI Studio will prefer live models when keys are present."],
         ];
         foreach ($articles as $article) {

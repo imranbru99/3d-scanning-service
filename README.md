@@ -1,14 +1,14 @@
-# Peakload Hauling Co. — Laravel 13 + Filament 3 Website, ERP & AI
+# Pointforge Reality Capture — Laravel 13 + Filament 3 Website, ERP & AI
 
-Production-ready SME platform for a Denver / Colorado Front Range **dump truck hauling** company: public marketing site, Filament admin ERP, knowledge base, and AI assistants for chat, content, automation ideas, and troubleshooting.
+Production-ready SME platform for an Austin / Central Texas **3D laser scanning and reality capture** company: public marketing site, Filament admin ERP, knowledge base, and AI assistants for chat, content, automation ideas, and troubleshooting.
 
 ## Features
 - 🏠 Premium public site (hero, services, about, dashboard preview, contact)
-- 🚚 Service detail pages for dirt haul, aggregate delivery, spoil, demo debris, site transport & same-day dispatch
+- 📐 Service detail pages for as-built scans, interior/MEP capture, scan-to-CAD/BIM, topo, clash verification, and progress capture
 - 📰 Blog / knowledge content with seeded posts
 - 📬 Contact form that stores leads in the database
 - 💬 Floating WhatsApp button + public AI chatbot widget
-- 🗂️ Filament ERP at `/admin` (customers, haul jobs, inventory, invoices, payments, appointments)
+- 🗂️ Filament ERP at `/admin` (customers, scan jobs, products, invoices, payments, appointments)
 - 👥 Roles: Admin, Manager, Staff
 - 📊 Reports dashboard with stats + charts
 - ⚙️ Settings page for company phone, WhatsApp, tax rate, and more
@@ -20,15 +20,15 @@ Production-ready SME platform for a Denver / Colorado Front Range **dump truck h
 - Laravel 13
 - Filament 3
 - Livewire + Alpine.js
-- Tailwind-friendly public CSS (custom Peakload theme)
+- Tailwind-friendly public CSS (custom Pointforge theme)
 - MySQL or SQLite
 - Spatie Laravel Permission
 - OpenAI API with Gemini fallback keys (demo FAQ mode when keys are empty)
 
 ## Installation
 ```bash
-git clone https://github.com/imranbru99/hauling-company.git
-cd hauling-company
+git clone https://github.com/imranbru99/3d-scanning-service.git
+cd 3d-scanning-service
 composer install
 copy .env.example .env   # Windows
 php artisan key:generate
@@ -51,19 +51,19 @@ GEMINI_API_KEY=
 ```
 
 ## Screenshots / Visual Dashboard
-![Dump truck on haul route](https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1600&q=80)
+![Laser scanning technician on site](https://images.unsplash.com/photo-1581092162384-8987a1d9d588?auto=format&fit=crop&w=1600&q=80)
 
-![Construction site excavation](https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80)
+![Modern building façade documentation](https://images.unsplash.com/photo-1486406146926-9300a8dcf259?auto=format&fit=crop&w=1600&q=80)
 
-![Aggregate and rock stockpile](https://images.unsplash.com/photo-1590496793929-36417d3117de?auto=format&fit=crop&w=1600&q=80)
+![Engineering tablet on jobsite](https://images.unsplash.com/photo-1581094794329-c811d9fab50c?auto=format&fit=crop&w=1600&q=80)
 
-![Heavy equipment staging yard](https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=1600&q=80)
+![Architecture model and BIM coordination](https://images.unsplash.com/photo-1582719478250-c89cae7dc08b?auto=format&fit=crop&w=1600&q=80)
 
 ## Live Demo
 Placeholder — deploy to your host and share the public URL + `/admin` demo credentials.
 
 ## SEO-optimized repo description suggestion
-`Peakload Hauling Co. — Laravel 13 + Filament 3 website, ERP, and AI chatbot for US dump truck hauling (dirt, aggregate, spoil, demo debris).`
+`Pointforge Reality Capture — Laravel 13 + Filament 3 website, ERP, and AI chatbot for US 3D laser scanning, point clouds, and scan-to-CAD reality capture SMEs.`
 
 ---
 
@@ -81,4 +81,4 @@ Delivery Mode: Async-ready, Slack, Discord, Jira, GitHub, and production-first a
 | 💬 WhatsApp Direct | +880 1576-918420 | Chat Now ↗ |
 | 📧 Direct Email | me@imrandev.bd | Send Email ↗ |
 | 🐦 X (Twitter) | @imrandev_bd | Follow ↗ |
-| 📺 YouTube Tech | @ImranDevBD | Subscribe ↗ |
+| 📺 YouTube Tech | @ImranDevBD | Subscribe 
